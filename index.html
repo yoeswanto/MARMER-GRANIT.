@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Marmer & Granit Professional - Andika Nabil Syahputra</title>
+    <!-- FontAwesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0a0a12;
+            --card-bg: #121220;
+            --neon-blue: #00f3ff;
+            --neon-purple: #b000ff;
+            --text-color: #ffffff;
+            --text-secondary: #a0a0c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Background Animated Glow */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.4;
+            animation: float 10s infinite alternate ease-in-out;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--neon-blue);
+            top: 10%;
+            left: 10%;
+        }
+
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--neon-purple);
+            bottom: 10%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(50px) scale(1.1); }
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(10, 10, 18, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-blue);
+            text-shadow: 0 0 8px var(--neon-blue);
+        }
+
+        .btn-edit {
+            background: transparent;
+            border: 2px solid var(--neon-purple);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--neon-purple);
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-edit:hover {
+            background: var(--neon-purple);
+            box-shadow: 0 0 20px var(--neon-purple);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            padding-top: 80px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(0, 243, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 span {
+            color: var(--neon-blue);
+            text-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        .hero-text h2 {
+            font-size: 1.5rem;
+            color: var(--neon-purple);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--neon-purple);
+        }
+
+        .hero-text p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Profile Image Container */
+        .profile-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+
+        .profile-img-box {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid var(--neon-blue);
+            box-shadow: 0 0 25px var(--neon-blue), inset 0 0 15px var(--neon-blue);
+            overflow: hidden;
+            position: relative;
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 15px var(--neon-blue); }
+            100% { box-shadow: 0 0 35px var(--neon-purple); border-color: var(--neon-purple); }
+        }
+
+        .profile-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-icons a:hover {
+            color: var(--neon-blue);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px var(--neon-blue);
+            transform: translateY(-5px);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--text-color);
+        }
+
+        .section-title span {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* Services Section */
+        .skills-section {
+            padding: 80px 8%;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 243, 255, 0.1);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: var(--neon-purple);
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px var(--neon-purple);
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 20px 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(176, 0, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 15px var(--neon-purple);
+        }
+
+        .contact-card i {
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #05050a;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Modal Edit Profil */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 30px var(--neon-blue);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background: #0a0a12;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .form-group input[type="file"] {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 8px var(--neon-blue);
+        }
+
+        .preview-img-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-top: 10px;
+            border: 2px solid var(--neon-blue);
+            display: none;
+        }
+
+        .preview-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-save {
+            background: var(--neon-blue);
+            color: #000;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-close {
+            background: #ff4757;
+            color: #fff;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                justify-content: center;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .profile-container {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Glowing Background -->
+    <div class="bg-glow">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">ANS.MARBLE</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#skills">Layanan</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <button class="btn-edit" onclick="openModal()"><i class="fa-solid fa-pen-to-square"></i> Edit Profil</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-text">
+            <span class="badge" id="display-badge"><i class="fa-solid fa-gem"></i> Spesialis Marmer & Granit</span>
+            <h1>Layanan Profesional <br><span id="display-name">Andika Nabil Syahputra</span></h1>
+            <h2 id="display-role">Pemasangan, Poles & Perawatan Marmer/Granit</h2>
+            <p id="display-about">Melayani jasa pemasangan marmer dan granit lantai, dinding, meja dapur (kitchen set), tangga, serta jasa pemolesan & restorasi marmer tua agar kembali mengkilap sempurna.</p>
+            
+            <!-- Social Media Links (Tautan YouTube Dihapus) -->
+            <div class="social-icons">
+                <a href="https://www.tiktok.com/@dikaaa269?_r=1&_t=ZS-98D3CsDLvse" id="link-tiktok" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/andikanbl_?igsh=MXF4dGNhZXllOTU4ZQ==" id="link-instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/19GCZjaHDu/" id="link-facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-img-box">
+                <!-- Foto Placeholder Marmer -->
+                <img id="display-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Foto Profil / Sampel Marmer">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="skills-section" id="skills">
+        <h2 class="section-title">Layanan <span>Unggulan Kami</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fa-solid fa-layer-group"></i>
+                <h3>Pemasangan Lantai & Dinding</h3>
+                <p>Pemasangan marmer dan granit interior maupun eksterior dengan tingkat presisi tinggi dan hasil rapi.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>Meja Dapur & Top Counter</h3>
+                <p>Pembuatan serta pemotongan custom meja dapur (kitchen set), meja bar, dan wastafel granit/marmer.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h3>Poles & Restorasi Marmer</h3>
+                <p>Jasa kristalisasi dan pemolesan marmer kusam/berbaret agar kembali bening mengkilap seperti baru.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-border-all"></i>
+                <h3>Supply & Penjualan Material</h3>
+                <p>Menyediakan berbagai macam pilihan motif batu marmer alam dan granit berkualitas tinggi untuk kebutuhan hunian.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Hubungi <span>Kami</span></h2>
+        <div class="contact-container">
+            <div class="contact-card">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                    <small style="color: var(--text-secondary);">Telepon / WA</small>
+                    <p id="display-phone">0895326125259</p>
+                </div>
+            </div>
+            <div class="contact-card">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <small style="color: var(--text-secondary);">Email</small>
+                    <p id="display-email">nabilandika320@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Jasa Marmer & Granit - Andika Nabil Syahputra. All Rights Reserved.</p>
+    </footer>
+
+    <!-- MODAL EDIT PROFIL -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <h2><i class="fa-solid fa-user-pen"></i> Edit Profil / Informasi Usaha</h2>
+            
+            <!-- Upload Foto File -->
+            <div class="form-group">
+                <label>Pilih Foto Profil / Hasil Kerja Baru</label>
+                <input type="file" id="input-file" accept="image/*" onchange="previewImage(event)">
+                <div class="preview-img-box" id="preview-box">
+                    <img id="preview-img" src="" alt="Preview Foto">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Nama Penyedia Jasa / Usaha</label>
+                <input type="text" id="input-name">
+            </div>
+            <div class="form-group">
+                <label>Sub-Judul / Spesialisasi</label>
+                <input type="text" id="input-role">
+            </div>
+            <div class="form-group">
+                <label>Deskripsi Layanan Singkat</label>
+                <textarea id="input-about" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label>No. HP / WhatsApp</label>
+                <input type="text" id="input-phone">
+            </div>
+            <div class="form-group">
+                <label>Email Kontak</label>
+                <input type="email" id="input-email">
+            </div>
+            <div class="form-group">
+                <label>Link TikTok</label>
+                <input type="text" id="input-tiktok">
+            </div>
+            <div class="form-group">
+                <label>Link Instagram</label>
+                <input type="text" id="input-instagram">
+            </div>
+            <div class="form-group">
+                <label>Link Facebook</label>
+                <input type="text" id="input-facebook">
+            </div>
+
+            <div class="modal-buttons">
+                <button class="btn-close" onclick="closeModal()">Batal</button>
+                <button class="btn-save" onclick="saveProfile()">Simpan Perubahan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript untuk Fitur Upload File, Edit Profil & Permanent LocalStorage -->
+    <script>
+        const modal = document.getElementById('editModal');
+        let selectedImageBase64 = null;
+
+        // FUNGSI 1: Memuat Data dari LocalStorage saat Halaman Pertama Kali Dibuka / Di-refresh
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedProfile = localStorage.getItem('marbleProfileData');
+            if (savedProfile) {
+                const data = JSON.parse(savedProfile);
+                
+                if (data.img) document.getElementById('display-img').src = data.img;
+                if (data.name) document.getElementById('display-name').innerText = data.name;
+                if (data.role) document.getElementById('display-role').innerText = data.role;
+                if (data.about) document.getElementById('display-about').innerText = data.about;
+                if (data.phone) document.getElementById('display-phone').innerText = data.phone;
+                if (data.email) document.getElementById('display-email').innerText = data.email;
+
+                if (data.tiktok) document.getElementById('link-tiktok').href = data.tiktok;
+                if (data.instagram) document.getElementById('link-instagram').href = data.instagram;
+                if (data.facebook) document.getElementById('link-facebook').href = data.facebook;
+            }
+        });
+
+        // FUNGSI 2: Membuka Modal Form Edit
+        function openModal() {
+            document.getElementById('input-name').value = document.getElementById('display-name').innerText;
+            document.getElementById('input-role').value = document.getElementById('display-role').innerText;
+            document.getElementById('input-about').value = document.getElementById('display-about').innerText;
+            document.getElementById('input-phone').value = document.getElementById('display-phone').innerText;
+            document.getElementById('input-email').value = document.getElementById('display-email').innerText;
+            
+            document.getElementById('input-tiktok').value = document.getElementById('link-tiktok').href;
+            document.getElementById('input-instagram').value = document.getElementById('link-instagram').href;
+            document.getElementById('input-facebook').value = document.getElementById('link-facebook').href;
+
+            document.getElementById('input-file').value = "";
+            document.getElementById('preview-box').style.display = 'none';
+            selectedImageBase64 = null;
+
+            modal.style.display = 'flex';
+        }
+
+        // FUNGSI 3: Preview Gambar
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                if (file.size > 5 * 1024 * 1024) {
+                    alert('Ukuran foto terlalu besar. Pilih foto di bawah 5MB.');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    selectedImageBase64 = e.target.result;
+                    document.getElementById('preview-img').src = selectedImageBase64;
+                    document.getElementById('preview-box').style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // FUNGSI 4: Menutup Modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // FUNGSI 5: Menyimpan Profil & Menyimpannya Secara Permanen ke LocalStorage
+        function saveProfile() {
+            const newName = document.getElementById('input-name').value;
+            const newRole = document.getElementById('input-role').value;
+            const newAbout = document.getElementById('input-about').value;
+            const newPhone = document.getElementById('input-phone').value;
+            const newEmail = document.getElementById('input-email').value;
+            
+            const newTiktok = document.getElementById('input-tiktok').value;
+            const newInstagram = document.getElementById('input-instagram').value;
+            const newFacebook = document.getElementById('input-facebook').value;
+
+            let finalImage = selectedImageBase64 ? selectedImageBase64 : document.getElementById('display-img').src;
+
+            // Update Tampilan Langsung
+            document.getElementById('display-img').src = finalImage;
+            document.getElementById('display-name').innerText = newName;
+            document.getElementById('display-role').innerText = newRole;
+            document.getElementById('display-about').innerText = newAbout;
+            document.getElementById('display-phone').innerText = newPhone;
+            document.getElementById('display-email').innerText = newEmail;
+
+            document.getElementById('link-tiktok').href = newTiktok;
+            document.getElementById('link-instagram').href = newInstagram;
+            document.getElementById('link-facebook').href = newFacebook;
+
+            // Objek data yang akan disimpan
+            const profileData = {
+                img: finalImage,
+                name: newName,
+                role: newRole,
+                about: newAbout,
+                phone: newPhone,
+                email: newEmail,
+                tiktok: newTiktok,
+                instagram: newInstagram,
+                facebook: newFacebook
+            };
+
+            try {
+                localStorage.setItem('marbleProfileData', JSON.stringify(profileData));
+                alert('Informasi layanan berhasil disimpan!');
+            } catch (e) {
+                alert('Foto berhasil diganti di layar, namun ukurannya terlalu besar untuk disimpan permanen di memori browser. Coba gunakan foto dengan ukuran file yang lebih kecil.');
+            }
+
+            closeModal();
+        }
+
+        // Tutup modal jika klik luar
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
